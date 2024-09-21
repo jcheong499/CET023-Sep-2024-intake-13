@@ -13,7 +13,7 @@ def prediction_DBS():
 @app.route("/prediction_result_DBS",methods=["GET","POST"])
 def prediction_result_DBS():
     q = float(request.form.get("q"))
-    r = (-50.6 * q) + 90.2
+    r = (-50.6 * q)+ 90.2
     return(render_template("prediction_result_DBS.html",r=r))
 
 if __name__=="__main__":
