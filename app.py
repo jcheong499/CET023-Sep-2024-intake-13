@@ -63,24 +63,3 @@ def q2():
 if __name__=="__main__":
     app.run()
     
-
-    return(render_template("prediction_result_DBS.html",r=r))
-
-@app.route("/faq",methods=["GET","POST"])
-def faq():
-   return(render_template("faq.html"))
-
-@app.route("/q1",methods=["GET","POST"])
-def q1():
-    r = model.generate_content("How should I diversify my investment portfolio?")
-    return(render_template("q1_reply.html",r=r))
-
-@app.route("/q2",methods=["GET","POST"])
-def q2():
-    q = request.form.get("q")
-    r = model.generate_content(q)
-    return(render_template("q2_reply.html",r=r))
-
-if __name__=="__main__":
-    app.run()
-    
